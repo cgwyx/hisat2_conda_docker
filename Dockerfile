@@ -19,7 +19,7 @@ RUN conda update --all -y&&\
          conda config --add channels r &&\
          conda config --add channels bioconda &&\
          conda config --set show_channel_urls yes &&\
-         conda install hisat2=2.0.5 -y
+         conda install -c bioconda hisat2 -y
 
 CMD ["/bin/bash"]
 

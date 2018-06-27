@@ -15,12 +15,13 @@
 
 FROM continuumio/miniconda
 
-RUN conda update --all -y&&\
-         conda config --add channels r &&\
-         conda config --add channels bioconda &&\
-         conda config --set show_channel_urls yes &&\
-         conda install -c bioconda hisat2 -y
-
+RUN conda update --all -y &&\
+    conda config --add channels r &&\
+    conda config --add channels bioconda &&\
+    conda config --set show_channel_urls yes &&\
+    conda install -y -c bioconda hisat2  &&\
+    conda install -y -c bioconda samtools  &&\
+    conda install -y -c bioconda stringtie
 CMD ["/bin/bash"]
 
 
